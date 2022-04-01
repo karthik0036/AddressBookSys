@@ -14,15 +14,18 @@ public class AddressBookMain {
 		System.out.println("1.add" + "\n" + "2.edit");
 		int option = sc.nextInt();
 
-		switch (option) {
-		case 1:
-			addressBookList.addContactDetails();
-			break;
-		case 2:
-			addressBookList.editContactDetails();
-			break;
-		default:
-			System.out.println("Invalid Input");
+		 switch (option) {
+         case 1:
+             addressBookList.addContactDetails();
+             break;
+         case 2:
+             addressBookList.editContactDetails();
+             break;
+         case 3:
+             addressBookList.deleteContact();
+             break;
+         default:
+             System.out.println("Invalid Input");
 		}
 	}
 
@@ -137,5 +140,17 @@ public class AddressBookMain {
 			System.out.println("Edited list is:");
 			System.out.println(adressBook);
 		}
+	}
+
+	public void deleteContact() {
+		System.out.println("confirm the name to delete contact");
+		String confirmName = sc.next();
+		for (int i = 0; i < adressBook.size(); i++) {
+			if (adressBook.get(i).getFirstName().equals(confirmName))
+				;
+			Person person = adressBook.get(i);
+			adressBook.remove(person);
+		}
+		System.out.println(adressBook);
 	}
 }
