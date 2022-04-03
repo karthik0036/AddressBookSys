@@ -91,6 +91,10 @@ public class Person {
 		this.email = email;
 	}
 	
+	public static Person createContact(String firstName, String lastName, String address, String city, String state, int zip, long phoneNumber, String email) {
+        return new Person(firstName, lastName, address, city, state, zip, phoneNumber, email);
+    }
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
